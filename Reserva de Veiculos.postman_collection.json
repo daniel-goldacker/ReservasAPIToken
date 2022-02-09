@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "364961eb-3f94-4d79-9ae7-dc2543f2ccc1",
+		"name": "Reserva de Veiculos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Geração de Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usuario",
+						"value": "robin",
+						"type": "text"
+					},
+					{
+						"key": "senha",
+						"value": "robin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Reserva",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJvYmluIiwibmJmIjoxNjQ0NDIyODU1LCJleHAiOjE2NDQ0MzAwNTUsImlhdCI6MTY0NDQyMjg1NX0.R0DQFvJjc3UONCCoX_Nn5MI1Zz6cNbqQEsx9bavk9Ho",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/reservas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Reserva",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJvYmluIiwibmJmIjoxNjQ0NDIyODU1LCJleHAiOjE2NDQ0MzAwNTUsImlhdCI6MTY0NDQyMjg1NX0.R0DQFvJjc3UONCCoX_Nn5MI1Zz6cNbqQEsx9bavk9Ho",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"reservaID\": 4,\n        \"nome\": \"matrix\",\n        \"localInicioLocacao\": \"Jundiaí\",\n        \"localFimLocacao\": \"Campinas\",\n        \"veiculo\" : \"BMW\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/reservas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Reserva",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJvYmluIiwibmJmIjoxNjQ0NDIyODU1LCJleHAiOjE2NDQ0MzAwNTUsImlhdCI6MTY0NDQyMjg1NX0.R0DQFvJjc3UONCCoX_Nn5MI1Zz6cNbqQEsx9bavk9Ho",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"reservaID\": 4,\n        \"nome\": \"Adolf Hitler\",\n        \"localInicioLocacao\": \"Alemanha\",\n        \"localFimLocacao\": \"Argentina\",\n        \"veiculo\": \"Mercedez\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/reservas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insere/Altera Reserva",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJvYmluIiwibmJmIjoxNjQ0NDIyODU1LCJleHAiOjE2NDQ0MzAwNTUsImlhdCI6MTY0NDQyMjg1NX0.R0DQFvJjc3UONCCoX_Nn5MI1Zz6cNbqQEsx9bavk9Ho",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"reservaID\": 1,\n        \"nome\": \"matrix goldacker\",\n        \"localInicioLocacao\": \"Jundiaí\",\n        \"localFimLocacao\": \"Campinas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/reservas?",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"reservas"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Reserva",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJvYmluIiwibmJmIjoxNjQ0NDIyODU1LCJleHAiOjE2NDQ0MzAwNTUsImlhdCI6MTY0NDQyMjg1NX0.R0DQFvJjc3UONCCoX_Nn5MI1Zz6cNbqQEsx9bavk9Ho",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5001/api/reservas/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"reservas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
